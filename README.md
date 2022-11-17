@@ -78,9 +78,8 @@ networks:
 运行命令：
 
 ``````
-docker-compose up -d
-
-docker-compose stop
+docker-compose up --build -d            #启动并后台运行,不加buil参数会使用本地历史镜像创建容器
+docker-compose stop				#停止
 ``````
 
 注：需先安装docker和docker-compose

@@ -6,4 +6,10 @@ RUN docker-php-ext-install pdo_mysql \
 && rm -r /tmp/redis.tar.gz \
 && mkdir -p /usr/src/php/ext \
 && mv phpredis-5.3.6 /usr/src/php/ext/redis \
-&& docker-php-ext-install redis
+&& docker-php-ext-install redis \
+&& curl -L -o  /tmp/protobuf.tgz  https://pecl.php.net/get/protobuf-3.21.9.tgz \
+&& tar xfz /tmp/protobuf.tgz \
+&& rm -r /tmp/protobuf.tgz \
+&& mkdir -p /usr/src/php/ext \
+&& mv protobuf-3.21.9 /usr/src/php/ext/protobuf \
+&& docker-php-ext-install protobuf

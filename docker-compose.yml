@@ -27,8 +27,9 @@ services:
      networks:
       - lnmp
   php:
+     #image: ddg/php-fpm:7.4
      build: ./php-extension
-     container_name: php74
+     container_name: php74    #不可随便修改
      restart: always
      volumes:
       - /home/www/:/var/www/html/:rw
